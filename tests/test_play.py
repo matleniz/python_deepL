@@ -21,7 +21,7 @@ def test_mcplat_select():
 
 
 def test_mcplat_agent_one_game():
-    r = play(lambda: Agent(n_sim=5), seed=0, my_seat=0)
+    r = play(lambda: Agent(n_sim=5, time_budget=None), seed=0, my_seat=0)
     assert r in (-1.0, 0.0, 1.0)
 
 
