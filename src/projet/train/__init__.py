@@ -1,0 +1,1 @@
+"""Scripts d'entraînement locaux."""

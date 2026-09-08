@@ -17,7 +17,8 @@ agent.py
 *.pt
 *.pth
 *.ckpt
-checkpoints/
+checkpoints/*
+!checkpoints/.gitkeep
 .ipynb_checkpoints/
 
 # IDE / OS
