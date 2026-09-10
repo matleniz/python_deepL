@@ -1368,6 +1368,41 @@ wheels = [
 ]
 
 [[package]]
+name = "puissance4"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "ipykernel" },
+    { name = "jupyter" },
+    { name = "mlarena-sdk" },
+    { name = "numpy" },
+    { name = "pettingzoo" },
+    { name = "pygame" },
+    { name = "python-dotenv" },
+    { name = "torch", version = "2.14.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'darwin'" },
+    { name = "torch", version = "2.14.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform != 'darwin'" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ipykernel", specifier = ">=7.3.0" },
+    { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "mlarena-sdk", specifier = "==0.3.0" },
+    { name = "numpy", specifier = ">=2.5.3" },
+    { name = "pettingzoo", specifier = ">=1.24.0" },
+    { name = "pygame", specifier = ">=2.6.1" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "python-dotenv", specifier = ">=1.2.3" },
+    { name = "torch", specifier = ">=2.14.0", index = "https://download.pytorch.org/whl/cpu" },
+]
+provides-extras = ["dev"]
+
+[[package]]
 name = "pure-eval"
 version = "0.2.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1443,41 +1478,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427", size = 229892, upload-time = "2024-03-01T18:36:18.57Z" },
 ]
-
-[[package]]
-name = "python-deepl"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "ipykernel" },
-    { name = "jupyter" },
-    { name = "mlarena-sdk" },
-    { name = "numpy" },
-    { name = "pettingzoo" },
-    { name = "pygame" },
-    { name = "python-dotenv" },
-    { name = "torch", version = "2.14.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'darwin'" },
-    { name = "torch", version = "2.14.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform != 'darwin'" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "ipykernel", specifier = ">=7.3.0" },
-    { name = "jupyter", specifier = ">=1.1.1" },
-    { name = "mlarena-sdk", specifier = "==0.3.0" },
-    { name = "numpy", specifier = ">=2.5.3" },
-    { name = "pettingzoo", specifier = ">=1.24.0" },
-    { name = "pygame", specifier = ">=2.6.1" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "python-dotenv", specifier = ">=1.2.3" },
-    { name = "torch", specifier = ">=2.14.0", index = "https://download.pytorch.org/whl/cpu" },
-]
-provides-extras = ["dev"]
 
 [[package]]
 name = "python-dotenv"

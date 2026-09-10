@@ -1,0 +1,7 @@
+[project]
+name = "seance2"
+version = "0.1.0"
+description = "Séance 2 — notebooks AIE (bank marketing, bike demand)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

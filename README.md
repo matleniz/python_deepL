@@ -1,32 +1,33 @@
 # python-deepL
 
-Un `.venv` (uv), package `projet` sous `src/`.
+Workspace multi-projets. Chaque dossier a son propre `pyproject.toml`, `.venv` et `uv.lock`.
 
 ```
-src/projet/
-  play.py
-  minimooteur.py
-  agents/
-  train/
-notebooks/           # Colab : cellule bootstrap en premier
-tests/
-checkpoints/
+python_deepL/
+  puissance4/     # agents Connect Four (ml-arena)
+  seance2/        # notebooks AIE séance 2
+  <autre>/        # prochain projet : uv init + deps à part
 ```
 
-## Setup local
+## Nouveau projet
 
 ```bash
-uv sync --extra dev
-uv run pytest
-uv run python -m projet.play
+mkdir mon-projet && cd mon-projet
+uv init
+uv sync
 ```
 
-## Colab
+## Puissance 4
 
-Le runtime Colab **ne voit pas** ton dossier WSL. Dans chaque notebook :
+```bash
+cd puissance4
+uv sync --extra dev
+uv run pytest
+```
 
-1. Cellule bootstrap (`notebooks/colab_bootstrap.py`) → clone + `sys.path`
-2. Puis `from projet.play import ...`
+## Séance 2
 
-Repo privé : PAT GitHub (`repo`) via `GITHUB_TOKEN` ou prompt.  
-**Push** ton code avant Colab, sinon le clone est vieux.
+```bash
+cd seance2
+uv sync   # quand tu seras prêt
+```

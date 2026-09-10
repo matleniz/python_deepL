@@ -1,7 +1,7 @@
 [project]
-name = "python-deepl"
+name = "puissance4"
 version = "0.1.0"
-description = "Python / DeepL — agents ml-arena (PettingZoo)"
+description = "Agents Connect Four (PettingZoo / ml-arena)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

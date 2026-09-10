@@ -1,5 +1,5 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  "python.analysis.extraPaths": ["${workspaceFolder}/src"],
+  "python.defaultInterpreterPath": "${workspaceFolder}/puissance4/.venv/bin/python",
+  "python.analysis.extraPaths": ["${workspaceFolder}/puissance4/src"],
   "jupyter.kernels.filter": []
 }

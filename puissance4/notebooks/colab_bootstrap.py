@@ -7,8 +7,13 @@ import sys
 from pathlib import Path
 
 REPO = "matleniz/python_deepL"
+PROJECT = "puissance4"
 CLONE_DIR = Path("/content") / "python_deepL"
 DEPS = ["pettingzoo", "pygame", "numpy"]
+
+
+def _project_src(root: Path) -> Path:
+    return root / PROJECT / "src"
 
 
 def _in_colab() -> bool:
@@ -16,7 +21,8 @@ def _in_colab() -> bool:
         return True
     if os.environ.get("COLAB_RELEASE_TAG"):
         return True
-    return Path("/content").is_dir() and not (Path.home() / "python_deepL" / "src").is_dir()
+    local = Path.home() / "python_deepL" / PROJECT / "src"
+    return Path("/content").is_dir() and not local.is_dir()
 
 
 def _find_src() -> Path | None:
@@ -24,9 +30,11 @@ def _find_src() -> Path | None:
     candidates = [
         here / "src",
         here.parent / "src",
-        Path.home() / "python_deepL" / "src",
-        CLONE_DIR / "src",
-        Path("/content") / "drive" / "MyDrive" / "python_deepL" / "src",
+        here / PROJECT / "src",
+        here.parent / PROJECT / "src",
+        Path.home() / "python_deepL" / PROJECT / "src",
+        _project_src(CLONE_DIR),
+        _project_src(Path("/content") / "drive" / "MyDrive" / "python_deepL"),
     ]
     if here.name == "notebooks":
         candidates.insert(0, here.parent / "src")
@@ -121,9 +129,11 @@ def _clone_or_pull() -> Path:
             )
         except subprocess.CalledProcessError:
             pass
-    src = root / "src"
+    src = _project_src(root)
     if not (src / "projet").is_dir():
-        raise RuntimeError(f"Pas de src/projet dans {root} — push ton code sur GitHub.")
+        raise RuntimeError(
+            f"Pas de {PROJECT}/src/projet dans {root} — push ton code sur GitHub."
+        )
     return src
 
 
