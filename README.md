@@ -6,6 +6,7 @@ Workspace multi-projets. Chaque dossier a son propre `pyproject.toml`, `.venv` e
 python_deepL/
   puissance4/     # agents Connect Four (ml-arena)
   seance2/        # notebooks AIE séance 2
+  seance3/        # notebooks AIE séance 3
   <autre>/        # prochain projet : uv init + deps à part
 ```
 
@@ -30,4 +31,12 @@ uv run pytest
 ```bash
 cd seance2
 uv sync   # quand tu seras prêt
+```
+
+## Séance 3
+
+```bash
+cd seance3
+uv sync
+uv run jupyter lab
 ```
