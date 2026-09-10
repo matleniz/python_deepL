@@ -1,0 +1,15 @@
+[project]
+name = "seance3"
+version = "0.1.0"
+description = "Séance 3 — notebooks AIE (bank marketing, bike demand)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.1",
+    "mlarena-sdk>=1.0.0",
+    "pandas>=3.0.5",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+]
